@@ -1,0 +1,38 @@
+var queensAttacktheKing = function(queens, king) {
+    let winners = [];
+    queens.forEach(queen => {
+        if(queen[0] === king[0]){
+            
+        }
+    });
+};
+
+function is_clear_path(queen, king){
+    if(queen[0] === king[0]){
+        for(let i=Math.min(queen[1], king[1])+1; i<Math.max(queen[1], king[1]); i++){
+            console.log('loop 0', i);
+            if(winners.find(q => q[1] === i)){
+                //there already is queen on the path to king
+                return;
+            } else {
+                winners.pop(winners.findIndex((x, y) => q[x][1] !== queen[1]))
+                console.log(queen);
+                winners.push(queen);
+            }
+        }
+    } else if (queen[1] === king[1]){
+        for(let i=Math.min(queen[1], king[1])+1; i<Math.max(queen[1], king[1]); i++){
+            console.log('loop 1', i);
+            if(winners.find(q => q[1] === i)){
+                return;
+            } else {
+                winners.pop(winners.findIndex(q => q !== queen[1]))
+                console.log(queen);
+                winners.push(queen);
+            }
+        }
+    }
+    return winners;
+}
+
+queen_test.push([7,3],[7,2],[7,7],[0,1],[0,5],[0,7],[2,5],[2,3],[2,7],[5,1],[6,1],[0,0])
