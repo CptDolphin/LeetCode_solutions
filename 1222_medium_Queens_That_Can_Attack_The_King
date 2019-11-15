@@ -36,3 +36,5 @@ function is_clear_path(queen, king){
 }
 
 queen_test.push([7,3],[7,2],[7,7],[0,1],[0,5],[0,7],[2,5],[2,3],[2,7],[5,1],[6,1],[0,0])
+for(let [index, number] of numbers.entries()){console.log(`index is: ${index}; numbers is: ${number}`)}
+
