@@ -1,0 +1,48 @@
+We are given two sentences A and B.  (A sentence is a string of space separated words.  Each word consists only of lowercase letters.)
+
+A word is uncommon if it appears exactly once in one of the sentences, and does not appear in the other sentence.
+
+Return a list of all uncommon words. 
+
+You may return the list in any order.
+
+ 
+
+Example 1:
+
+Input: A = "this apple is sweet", B = "this apple is sour"
+Output: ["sweet","sour"]
+Example 2:
+
+Input: A = "apple apple", B = "banana"
+Output: ["banana"]
+ 
+
+Note:
+
+0 <= A.length <= 200
+0 <= B.length <= 200
+A and B both contain only spaces and lowercase letters.
+Accepted
+
+
+#==============
+
+var uncommonFromSentences = function (A, B) {
+    let list = (A+' '.concat(B)).split(' ');
+    let my_set = new Set();
+    let common = [];
+    for(let i=0; i<list.length; i++){
+        if(my_set.has(list[i])) {
+            common.push(list[i]);
+        } else {
+            my_set.add(list[i]);
+        }
+    }
+    
+    for(let i=0; i<common.length; i++){
+        if(my_set.has(common[i])) my_set.delete(common[i]);
+    }
+    
+    return [...my_set];
+};
