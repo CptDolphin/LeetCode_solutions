@@ -36,7 +36,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
 //copied sorting algorithm from net 20sec work -> quicker by 4ms -> 128->124 and uses 0.5mb less ram 39.5 -> 39.0
 
 var findMedianSortedArrays = function(nums1, nums2) {
-    let arr = merge_sorted_array(nums1, nums2);
+    let arr = nums1.concat(nums2);
     if(arr.length%2 === 0){
         return (arr[arr.length/2]+arr[arr.length/2-1])/2
     }else {
