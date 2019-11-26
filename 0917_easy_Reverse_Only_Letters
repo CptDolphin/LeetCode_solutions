@@ -30,19 +30,22 @@ var reverseOnlyLetters = function(S) {
     let i = 0;
     let j = arr.length-1;
     let temp = 0;
+    let re = /[a-zA-Z]/i
     while(i < j){
-        if(arr[i].match(/[a-zA-Z]/i) && arr[j].match(/[a-zA-Z]/i)){
+        if(arr[i].match(re) && arr[j].match(re)){
             temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
             i++;
             j--;
-        } else if(!arr[i].match(/[a-zA-Z]/i) && !arr[j].match(/[a-zA-Z]/i)){
+        } else if(!arr[i].match(re) && !arr[j].match(re)){
             i++;
             j--;
-        } else if (arr[j].match(/[a-zA-Z]/i)){
+        } else if (arr[j].match(re)){
+            // if only j matches, increase i - as it's a special character atm.
             i++;
-        } else if (arr[i].match(/[a-zA-Z]/i)){
+        } else if (arr[i].match(re)){
+            //same as above
             j--;
         }
     }
