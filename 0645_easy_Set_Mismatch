@@ -19,8 +19,8 @@ Memory Usage: 40.2 MB, less than 100.00% of JavaScript online submissions for Se
 
 #============
 var findErrorNums = function(nums) {
-    let result = []
-    let my_set = new Set();
+    const result = []
+    const my_set = new Set();
     
     for(let v of nums){
         if(my_set.has(v)){
