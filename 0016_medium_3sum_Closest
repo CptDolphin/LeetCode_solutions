@@ -1,0 +1,44 @@
+Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
+
+Example:
+
+Given array nums = [-1, 2, 1, -4], and target = 1.
+
+The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+
+
+#======
+var threeSumClosest = function(nums, target) {
+    nums.sort((a, b) => a - b);
+    
+    let left = 0;
+    let right = nums.length-1;
+    let sum = 0;
+    let res = 0;
+    let dist = 0;
+    let close_dist = Number.MAX_SAFE_INTEGER;
+    
+    for(let i=0; i<nums.length; i++){
+        left = i+1;
+        right = nums.length-1;
+        
+        while(left < right){
+            sum = nums[left] + nums[i] + nums[right];
+            dist = Math.abs(sum - target);
+            
+            if(dist < close_dist){
+                close_dist = dist;
+                res = sum;
+            }
+            
+            if(sum > target){
+                right--;
+            } else if (sum < target){
+                left++;
+            } else {
+                return target;
+            }
+        }
+    }
+    return res;
+};
