@@ -35,3 +35,17 @@ var subtractProductAndSum = function(n) {
     const a = n.toString(10).split('').map(num => parseInt(num));
     return a.reduce((a, b) => a * b) - a.reduce((a, b) => a + b);
 };
+
+#======
+var subtractProductAndSum = function(n) {
+	return Array.from(String(n), Number).reduce((a, b) => a * b) -
+         	Array.from(String(n), Number).reduce((a, b) => a + b)  
+};
+
+#=====
+
+var subtractProductAndSum = function(n) {
+    return n.toString().split('').map(Number).reduce((a, b) => a * b) -
+	    n.toString().split('').map(Number).reduce((a, b) => a + b);
+
+};
