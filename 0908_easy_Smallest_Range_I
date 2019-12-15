@@ -40,9 +40,9 @@ Note:
 # Memory Usage: 35 MB, less than 100.00% of JavaScript online submissions for Smallest Range I.
 
 var smallestRangeI = function(A, K) {
-    return Math.max(0, Math.max.apply(Math, A) - Math.min.apply(Math, A) - (2 * K));
+    let n = Number.MAX_SAFE_INTEGER
+    return Math.max(0, Math.max(-n, ...A) - Math.min(n, ...A) - (2 * K));
 };
-
 
 #=====
 # Runtime: 48 ms, faster than 98.80% of JavaScript online submissions for Smallest Range I.
