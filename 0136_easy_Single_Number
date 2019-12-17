@@ -29,7 +29,7 @@ var singleNumber = function(nums) {
 #=======
 # Runtime: 48 ms, faster than 98.83% of JavaScript online submissions for Single Number.
 # Memory Usage: 35.3 MB, less than 92.31% of JavaScript online submissions for Single Number.
-const singleNumber = nums => nums.reduce((a, b) => a^b);
+const singleNumber = nums => nums.reduce((a, b) => a ^ b);
 
 #======
 # Runtime: 380 ms, faster than 7.05% of JavaScript online submissions for Single Number.
