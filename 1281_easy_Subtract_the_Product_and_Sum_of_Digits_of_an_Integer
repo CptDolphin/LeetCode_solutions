@@ -43,9 +43,11 @@ var subtractProductAndSum = function(n) {
 };
 
 #=====
-
+# Runtime: 52 ms, faster than 80.36% of JavaScript online submissions for Subtract the Product and Sum of Digits of an Integer.
+# Memory Usage: 33.9 MB, less than 100.00% of JavaScript online submissions for Subtract the Product and Sum of Digits of an Integer.
 var subtractProductAndSum = function(n) {
     return n.toString().split('').map(Number).reduce((a, b) => a * b) -
 	    n.toString().split('').map(Number).reduce((a, b) => a + b);
 
 };
+
