@@ -26,3 +26,33 @@ var arrayPairSum = function(nums) {
     nums.sort((a, b) => a - b);
     return nums.filter((a, i) => i%2 === 0).reduce((a, b) => a + b);
 };
+
+#====
+# Runtime: 112 ms, faster than 84.28% of JavaScript online submissions for Array Partition I.
+# Memory Usage: 39 MB, less than 33.33% of JavaScript online submissions for Array Partition I.
+
+var arrayPairSum = function(nums) {
+    let result = 0;
+    nums.sort((a, b) => a - b);
+    for(let i=0; i<nums.length; i+=2){
+        result += Math.min(nums[i], nums[i+1]);
+    }
+    return result;
+};
+
+#====
+# Runtime: 108 ms, faster than 92.67% of JavaScript online submissions for Array Partition I.
+# Memory Usage: 39.1 MB, less than 11.11% of JavaScript online submissions for Array Partition I.
+
+var arrayPairSum = function(nums) {
+    return nums.sort((a, b) => a - b).reduce((data, item) => {
+        if(data.count > 0){
+            data.count--;
+            data.value += Math.min(data.temp, item);
+        } else {
+            data.temp = item;
+            data.count++;
+        }
+        return data;
+    }, {count: 0, temp: 0, value: 0}).value;
+};
