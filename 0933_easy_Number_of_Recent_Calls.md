@@ -1,4 +1,4 @@
-933. Number of Recent Calls
+# 933. Number of Recent Calls
 Easy
 
 Write a class RecentCounter to count recent requests.
@@ -26,9 +26,9 @@ Note:
     Each test case will call ping with strictly increasing values of t.
     Each call to ping will have 1 <= t <= 10^9.
 
-#========
-# Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
-# Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
+---
+#### Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
+#### Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
 ```
 var RecentCounter = function() {
     this.q = [];
