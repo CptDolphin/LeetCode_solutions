@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 933. Number of Recent Calls
 =======
 933. Number of Recent Calls
 >>>>>>> 4dfa857... rename test
+=======
+# 933. Number of Recent Calls
+>>>>>>> 42bbe63... refactor 933
 Easy
 
 Write a class RecentCounter to count recent requests.
@@ -31,6 +35,7 @@ Note:
     Each call to ping will have 1 <= t <= 10^9.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 #### Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
 #### Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
@@ -39,6 +44,11 @@ Note:
 # Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
 # Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
 >>>>>>> 4dfa857... rename test
+=======
+---
+#### Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
+#### Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
+>>>>>>> 42bbe63... refactor 933
 ```
 var RecentCounter = function() {
     this.q = [];
