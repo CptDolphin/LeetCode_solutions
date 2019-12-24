@@ -30,7 +30,6 @@ Note:
 #### Runtime: 100 ms, faster than 6.08% of JavaScript online submissions for Last Stone Weight.
 #### Memory Usage: 38.3 MB, less than 100.00% of JavaScript online submissions for Last Stone Weight.
 ```javascript
->>>>>>> 8a2b9ab... 1046
 var lastStoneWeight = function(stones) {
     while(stones.length >= 2){
         stones.sort((a, b) => a - b).reverse();
@@ -59,6 +58,7 @@ var lastStoneWeight = function(stones) {
         s = stones.pop();
         stones.push(Math.abs(h - s));
         stones.sort((a, b) => a - b);
+<<<<<<< HEAD:1046_easy_Last_Stone_Weight.md
 ```
 ---
 ```javascript
