@@ -32,13 +32,11 @@ Output: False
 
 Note: The input will be a non-empty word consisting of uppercase and lowercase latin letters.
 
-#### Runtime: 60 ms, faster than 80.08% of JavaScript online submissions for Detect Capital.
-#### Memory Usage: 34.4 MB, less than 75.00% of JavaScript online submissions for Detect Capital.
+#### Runtime: 68 ms, faster than 35.81% of JavaScript online submissions for Detect Capital.
+#### Memory Usage: 34.6 MB, less than 75.00% of JavaScript online submissions for Detect Capital.
 
 ```javascript
 #### Terrible code where i went too far into the rabbit hole but works
-#### Runtime: 68 ms, faster than 35.81% of JavaScript online submissions for Detect Capital.
-#### Memory Usage: 34.6 MB, less than 75.00% of JavaScript online submissions for Detect Capital.
 var detectCapitalUse = function(word) {
     return word.split('').every(char => (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90)) || 
            word.split('').every(char => (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122)) || 
