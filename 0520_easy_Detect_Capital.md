@@ -36,7 +36,9 @@ Note: The input will be a non-empty word consisting of uppercase and lowercase l
 #### Memory Usage: 34.4 MB, less than 75.00% of JavaScript online submissions for Detect Capital.
 
 ```javascript
-#Terrible code where i went to the rabbit hole but works
+#### Terrible code where i went too far into the rabbit hole but works
+#### Runtime: 68 ms, faster than 35.81% of JavaScript online submissions for Detect Capital.
+#### Memory Usage: 34.6 MB, less than 75.00% of JavaScript online submissions for Detect Capital.
 var detectCapitalUse = function(word) {
     return word.split('').every(char => (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90)) || 
            word.split('').every(char => (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122)) || 
@@ -45,9 +47,9 @@ var detectCapitalUse = function(word) {
 };
 ```
 ---
+
 #### Runtime: 64 ms, faster than 60.38% of JavaScript online submissions for Detect Capital.
 #### Memory Usage: 34.1 MB, less than 100.00% of JavaScript online submissions for Detect Capital.
-
 ```javascript
 var detectCapitalUse = function(word) {
     if(/^([A-Z]?)[a-z]+$/g.test(word)){
@@ -60,6 +62,7 @@ var detectCapitalUse = function(word) {
 };
 ```
 ---
+
 #### Runtime: 52 ms, faster than 96.40% of JavaScript online submissions for Detect Capital.
 #### Memory Usage: 34.2 MB, less than 100.00% of JavaScript online submissions for Detect Capital.
 ```javascript
@@ -68,3 +71,6 @@ var detectCapitalUse = function(word) {
     return regexes.filter(regex => regex.test(word)).length > 0;
 };
 ```
+---
+
+
