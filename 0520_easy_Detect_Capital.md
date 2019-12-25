@@ -71,4 +71,14 @@ var detectCapitalUse = function(word) {
 ```
 ---
 
+#### Runtime: 68 ms, faster than 35.81% of JavaScript online submissions for Detect Capital.
+#### Memory Usage: 34.2 MB, less than 100.00% of JavaScript online submissions for Detect Capital.
 
+```javascript
+var detectCapitalUse = function(word) {
+    return word.toLowerCase() === word || 
+           word.toUpperCase() === word || 
+          (word.charAt(0).toUpperCase() === word.charAt(0) && 
+           word.substr(1).toLowerCase() === word.substr(1));
+};
+```
