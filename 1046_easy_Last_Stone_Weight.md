@@ -58,10 +58,20 @@ var lastStoneWeight = function(stones) {
         s = stones.pop();
         stones.push(Math.abs(h - s));
         stones.sort((a, b) => a - b);
+<<<<<<< HEAD:1046_easy_Last_Stone_Weight.md
+```
+---
+```javascript
+var lastStoneWeight = function(stones) {
+    stones.sort((a, b) => a > b ? -1 : 1);
+    let h = -1;
+    let s = -1;
+    while(stones.length > 1){
+        h = stones.shift();
+        s = stones.shift();
+        stones.push(Math.abs(h - s));
+        stones.sort((a, b) => a > b ? -1 : 1);
     }
     return stones[0];
 }
 ```
-
----
-
