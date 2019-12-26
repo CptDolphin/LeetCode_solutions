@@ -28,7 +28,7 @@ Note:
 
 #### Runtime: 264 ms, faster than 58.33% of JavaScript online submissions for Number of Recent Calls.
 #### Memory Usage: 56.1 MB, less than 100.00% of JavaScript online submissions for Number of Recent Calls.
-```
+```javascript
 var RecentCounter = function() {
     this.q = [];
 };
