@@ -1,3 +1,4 @@
+# 509 Fibbonacci Numbers
 The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 
 F(0) = 0,   F(1) = 1
@@ -26,16 +27,18 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 Note:
 
 0 ≤ N ≤ 30.
-#=====
-// easiest recursive
+---
+#### easiest recursive
+```javascript
 function fib(n){
     if(n === 0) return 0;
     if(n <= 2) return 1;
     return fib(n-1) + fib(n-2);
 }
+```
 
-#======
-// iterative from 0 till we get to n
+#### iterative from 0 till we get to n
+```javascript
 function fib(n){
     let a = 1;
     let b = 0;
@@ -49,9 +52,11 @@ function fib(n){
     }
     return b
 }
+```
 
-#========
-// recursive 
+---
+#### recursive 
+```javascript
 function fib(n){
     let result = 0;
     if(n === 0){
@@ -65,9 +70,10 @@ function fib(n){
     }
     return result;
 }
-
-#======
-// recursive with caching
+```
+---
+#### recursive with caching
+```javascript
 function fib(n, prev = []){
     let result = 0;
     if(n === 0){
@@ -87,3 +93,4 @@ function fib(n, prev = []){
     prev[n] = result;
     return result;
 }
+```
