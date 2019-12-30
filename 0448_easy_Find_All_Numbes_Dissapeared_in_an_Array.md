@@ -56,3 +56,47 @@ var findDisappearedNumbers = function(nums) {
     return result;
 };
 ```
+
+---
+### Temporary test solution
+```javascript
+var findDisappearedNumbers = function(nums) {
+    const temp = [];
+    const arr = [...new Set(nums.sort((a, b) => a - b))];
+    let helper = 0;
+
+    console.log('nums', nums);
+    console.log('arr', arr);
+    
+    if(arr[arr.length-1]  !== nums.length){
+        let count =  nums.length - arr[arr.length-1];
+        console.log('last number is wrong by', count);
+        while(count > 0){
+            helper++;
+            count--;
+            arr[nums.length-helper] = nums.length;
+        }
+        helper = 1;
+    }
+    
+    if(arr[0] !== 1){
+        let count =  arr[0] - 1;
+        console.log('first number is wrong by', count);
+        while(count > 0){
+            arr[helper] = ++helper;
+            count--;
+        }
+        
+    }
+
+    console.log(arr);
+    console.log(nums);
+    
+    for(let i=1; i<arr.length; i++){
+        if(arr[i] - arr[i-1] !== 1){
+            temp.push(...[...Array(arr[i] - arr[i-1] - 1).keys()].map(key => key + i + 1));
+        }
+    }
+    return temp;
+};
+```
