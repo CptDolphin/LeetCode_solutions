@@ -45,7 +45,7 @@ Constraints:
 ---
 #### Runtime: 60 ms, faster than 81.67% of JavaScript online submissions for Jump Game III.
 #### Memory Usage: 38 MB, less than 100.00% of JavaScript online submissions for Jump Game III.
-
+#### Recursion with numbers
 ```javascript
 var canReach = function(arr, start) {
     if(arr[start] < arr.length && start < arr.length){
@@ -54,5 +54,35 @@ var canReach = function(arr, start) {
         return hop === 0 || canReach(arr, start + hop) || canReach(arr, start - hop);
     }
     return false;
+};
+```
+
+---
+#### Runtime: 68 ms, faster than 43.33% of JavaScript online submissions for Jump Game III.
+#### Memory Usage: 38.4 MB, less than 100.00% of JavaScript online submissions for Jump Game III.
+#### Recursion on true / false 
+```javascript
+var canReach = function(arr, start, obj = {}) {
+    if(obj[start]){
+         return false;
+    }
+    
+    if(arr[start] === 0){
+        return true;
+    }
+    
+    obj[start] = true;
+    
+    return canReach(arr, start - arr[start], obj) || canReach(arr, start + arr[start], obj);
+};
+```
+---
+### or same but shorter
+```javascript
+var canReach = function(arr, start, obj = {}) {
+    if(obj[start]) return false;  
+    if(arr[start] === 0) return true;
+    obj[start] = true;
+    return canReach(arr, start - arr[start], obj) || canReach(arr, start + arr[start], obj);
 };
 ```
