@@ -1,4 +1,4 @@
-338. Counting Bits
+# 338. Counting Bits
 Medium
 
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
@@ -34,4 +34,24 @@ var countBits = function(num) {
 };
 
 #======
+---
+####Runtime: 88 ms, faster than 94.87% of JavaScript online submissions for Counting Bits.
+#### Memory Usage: 39.7 MB, less than 100.00% of JavaScript online submissions for Counting Bits.
+#### Algorithm taken from https://blogs.msdn.microsoft.com/jeuge/2005/06/08/bit-fiddling-3/
+#### I'm almost sure it could be shortened even more with beter memoization but oh well
+```javascript
+var countBits = function(num, memo = []) {
+    for(let i=0; i<=num; i++){
+        memo.push(count(i));
+    }
+    
+    function count(num){
+        let uCount;
+        uCount = num - ((num >> 1) & 033333333333) - ((num >> 2) & 011111111111);
+        return ((uCount + (uCount >> 3)) & 030707070707) % 63;       
+    }
+    
+    return memo;
+};
+```
 
