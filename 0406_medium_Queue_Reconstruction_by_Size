@@ -1,0 +1,36 @@
+var reconstructQueue = function(people) {
+    const result = [];
+    const numbers = [...new Set(people.map(elem => elem[0]).sort((a, b) => a - b))];
+    let temp = [[]];
+    let max = 0;
+    let length = 0;
+
+
+    while(numbers.length > 0){
+        max = numbers.pop();
+        temp = people.filter(man => man[0] === max).sort((a, b) => a - b);
+
+        
+        console.log('temp', temp);
+        console.log('numbers', numbers);
+        console.log('length', length);
+
+        
+        for(let i=0; i<length; i++){
+            console.log('result', result);
+            console.log('i', i);
+           
+            if (result.length === 0){
+                result.push(temp.shift());
+            } else if (result[i-1][0] === temp[0][0] && result[i-1][1] < temp[0][1]) {
+                result.push(temp.shift());
+            } else if(result[i-1][1] < temp[0][1]){
+                result.splice(i, 0, temp.shift());
+            } else if (result[i-1][1] > temp[0][1]){
+                result.splice(i-1, 0, temp.shift());
+            }
+        }
+    }
+    console.log('result', result); 
+    return result;
+};
