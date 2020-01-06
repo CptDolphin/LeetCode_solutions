@@ -46,3 +46,52 @@ var addTwoNumbers = function(l1, l2) {
 ```
 
 
+---
+```javascript
+// Not finished yet missing few ifs at the end
+var addTwoNumbers = function(l1, l2) {
+    let result = new ListNode(null);
+    let head = result;
+    let node = new ListNode(null);
+    let sum = 0;
+    var temp = null;
+    let next = 0;
+    
+
+    l1 = reverse(l1);
+    l2 = reverse(l2);
+
+    
+    while(l1 && l2){
+        sum = l1.val + l2.val;
+        if(sum > 9){
+            temp = sum/10;
+            sum %= 10;
+        }
+        
+        node = new ListNode(sum + next);
+        next = temp;
+        
+        head.next = node;
+        head = head.next;
+        
+        l1 = l1.next;
+        l2 = l2.next;
+    }
+
+    return result.next;
+};
+
+function reverse(l){
+    let prev = null;
+    while(l){
+        temp = l.next;
+        l.next = prev;
+        prev = l;
+        l = temp;
+    }
+    
+    return prev;
+}
+```
+
