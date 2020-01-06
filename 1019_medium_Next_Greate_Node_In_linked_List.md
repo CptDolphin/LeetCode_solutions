@@ -62,9 +62,9 @@ var nextLargerNodes = function(head) {
     let prev = null;
     let temp = null;
     
-    // Reverse Linked List
+    // Reverse Linked List and count it's length
     while(head){
-        count += 1;
+        count++;
         temp = head.next;
         head.next = prev;
         prev = head;
