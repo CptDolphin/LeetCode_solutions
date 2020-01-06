@@ -23,6 +23,8 @@ S consists only of English lowercase letters.
 
 
 ---
+#### Runtime: 68 ms, faster than 93.52% of JavaScript online submissions for Remove All Adjacent Duplicates In String.
+#### Memory Usage: 42.5 MB, less than 100.00% of JavaScript online submissions for Remove All Adjacent Duplicates In String.
 ```javascript
 var removeDuplicates = function(S) {
     let arr = [];
