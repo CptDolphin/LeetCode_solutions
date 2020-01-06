@@ -44,12 +44,13 @@ var removeDuplicates = function(S) {
 ```javascript
 var removeDuplicates = function(S) {
     S = S.split('');
-    let temp = 0;
-    let prev = false;
-    let length = -1;
+    let temp = -Number.MAX_SAFE_INTEGER;
+    let length = -Number.MAX_SAFE_INTEGER;
+    
     while(length !== S.length){
         length = S.length;
-        prev = false;
+        let prev = false;
+        
         for(let i=0; i<S.length-1; i++){
             if(S[i] === S[i+1]){
                 temp = i;
