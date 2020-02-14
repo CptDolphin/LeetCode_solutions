@@ -39,3 +39,15 @@ var findNumbers = function(nums) {
     }, 0)
 };
 ```
+
+---
+#### Found the function to count length on the internet - suposedly fastest way buy haven't seen the difference
+#### Runtime: 56 ms, faster than 81.54% of JavaScript online submissions for Find Numbers with Even Number of Digits.
+#### Memory Usage: 34.5 MB, less than 100.00% of JavaScript online submissions for Find Numbers with Even Number of Digits.
+```
+var findNumbers = function(nums) {
+    return nums.reduce((data, item) => { 
+        return data + +(((Math.log(Math.abs(item)+1) * 0.43429448190325176 | 0) + 1)%2 === 0)
+    }, 0)
+};
+```
